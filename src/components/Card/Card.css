@@ -1,0 +1,14 @@
+.Card {
+  width: 150px;
+  height: 200px;
+  box-shadow: 1px 1px 10px 4px;
+}
+
+.Card-container {
+  padding: 10px;
+}
+
+.Card-img {
+  height: 150px;
+  width: 200px;
+}

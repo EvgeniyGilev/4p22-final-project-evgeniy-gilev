@@ -1,0 +1,15 @@
+.CommonButton {
+  outline: none;
+  border: none;
+  background: black;
+  padding: 5px 5px;
+  color: white;
+  border-radius: 0;
+  transition: 0.2s background-color;
+  height: 25px;
+  width: 100px;
+}
+
+.commonbutton:hover {
+  color: blue;
+}
