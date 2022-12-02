@@ -1,0 +1,36 @@
+.navbar {
+  background-color: lightskyblue;
+  height: 50px;
+  min-height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(3vmin);
+}
+
+.navbar__horizontal-menu-list {
+  align-items: safe center;
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: auto;
+  /* justify-content: space-between; */
+  gap: 60px;
+}
+
+.navbar__horizontal-menu-list .horizontal-menu-list {
+  display: list-item;
+}
+
+.horizontal-menu-list__item:hover {
+  color: white;
+}
+
+.horizontal-menu-list li:nth-child(1) {
+  margin-left: auto;
+}
+.horizontal-menu-list li:nth-last-child(1) {
+  margin-right: auto;
+}

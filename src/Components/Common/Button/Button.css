@@ -1,0 +1,45 @@
+/* стили для кнопки */
+.CommonButton {
+  display: inline-block;
+  outline: none;
+  border: none;
+  background: black;
+  padding: 5px 5px;
+  color: white;
+  border-radius: 0;
+  transition: 0.5s background-color;
+  height: 25px;
+  width: 100px;
+}
+
+.CommonButton:hover {
+  background-color: lightskyblue;
+  color: black;
+}
+
+/* реализация светлой и темной темы через стили */
+.CommonButton--light {
+  background: white;
+  border: 1px solid black;
+  color: black;
+  transition: 0.5s background-color;
+}
+
+.CommonButton--light:hover {
+  background-color: black;
+  color: black;
+}
+
+.CommonButton--light.CommonButton--disabled {
+  border-color: grey;
+  color: grey;
+}
+
+.CommonButton--dark.CommonButton--disabled {
+  border-color: grey;
+  color: grey;
+}
+
+.CommonButton--disabled {
+  pointer-events: none;
+}
