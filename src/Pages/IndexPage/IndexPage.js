@@ -2,16 +2,18 @@ import './IndexPage.css';
 
 import Card from '../../Components/Card/Card';
 import Button from '../../Components/Common/Button/Button';
-import { IconSearch } from '../../Components/IconSVG/IconSearch';
-import { IconFilter } from '../../Components/IconSVG/IconFilter';
-import { useEffect, useState } from 'react';
+import { IconSearch } from '../../Images/IconSVG/IconSearch';
+import { IconFilter } from '../../Images/IconSVG/IconFilter';
+import { createRef, useEffect, useState } from 'react';
 import { Pagination, Stack } from '@mui/material';
 import { getPageProducts } from './IndexPage.utils';
 import { useDispatch, useSelector } from 'react-redux';
+import { setIsLoading, setProducts } from '../../Store/Slices/CartSlice';
+import Api from '../../API/Api';
 
 export default function IndexPage() {
   // Redux
-  const { isLoading, products } = useSelector((state) => state.mainReducer);
+  const { isLoading, products } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   // Фильтрация
@@ -31,18 +33,23 @@ export default function IndexPage() {
   const [pageSize, setPageSize] = useState(8);
   const [pageCount, setPageCount] = useState(0);
 
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then((response) => response.json())
-      .then((result) => {
-        setFoundProducts(result);
-        setTotalProducts(getPageProducts(result, 0, 8));
+  const searchButtonRef = createRef();
 
-        setCategories([
-          '',
-          ...Array.from(new Set(result.map((item) => item.category))),
-        ]);
-      });
+  // Первоначальная загрузка продуктов
+  useEffect(() => {
+    dispatch(setIsLoading(true));
+    Api.fetchProducts().then((result) => {
+      dispatch(setProducts(result));
+      setFoundProducts(result);
+      setTotalProducts(getPageProducts(result, 0, 8));
+
+      setCategories([
+        '',
+        ...Array.from(new Set(result.map((item) => item.category))),
+      ]);
+
+      dispatch(setIsLoading(false));
+    });
   }, []);
 
   // Обработчик события при нажатии кнопки Поиск
@@ -84,10 +91,25 @@ export default function IndexPage() {
     <div className="index-page">
       <main className="index-page__main">
         <div className="search-block">
-          <input></input>
+          <input
+            type="text"
+            value={searchInput}
+            onChange={(event) => {
+              setSearchInput(event.target.value);
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                searchButtonRef.current.click();
+              }
+            }}
+          />
           <div className="search-block__button">
             <IconSearch />
-            <Button type="SearchButton" onClick={onSearch}>
+            <Button
+              type="SearchButton"
+              onClick={onSearch}
+              ref={searchButtonRef}
+            >
               Поиск
             </Button>
           </div>
@@ -130,10 +152,10 @@ export default function IndexPage() {
               <h1>Совпадений не найдено...</h1>
             )
           ) : (
-            <h1>Loading...</h1>
+            <h1>Загрузка...</h1>
           )}
         </div>
-        <Stack spacing={2}>
+        <Stack className="pagination-container" spacing={2}>
           <Pagination
             page={page + 1}
             count={pageCount}

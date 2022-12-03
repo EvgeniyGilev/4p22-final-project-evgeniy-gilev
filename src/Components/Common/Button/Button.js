@@ -1,14 +1,17 @@
 import './Button.css';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { forwardRef } from 'react';
 
-function Button({
-  disabled = false,
-  onClick = () => {},
-  children,
-  className,
-  type,
-}) {
+const Button = forwardRef((props, ref) => {
+  const {
+    disabled = false,
+    onClick = () => {},
+    children,
+    className,
+    type,
+  } = props;
+
   const onInnerClick = (event) => {
     console.log('button clicked', event);
     onClick(event);
@@ -49,11 +52,11 @@ function Button({
   );
 
   return (
-    <button onClick={onInnerClick} className={buttonClassName}>
+    <button onClick={onInnerClick} className={buttonClassName} ref={ref}>
       {children}
     </button>
   );
-}
+});
 
 Button.propTypes = {
   children: PropTypes.string,

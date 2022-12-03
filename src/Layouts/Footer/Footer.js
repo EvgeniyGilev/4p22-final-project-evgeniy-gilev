@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from '../Common/Button/Button';
+import Button from '../../Components/Common/Button/Button';
 import './Footer.css';
 
 export default function Footer() {

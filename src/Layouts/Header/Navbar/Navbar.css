@@ -2,6 +2,7 @@
   background-color: lightskyblue;
   height: 50px;
   min-height: 5vh;
+  min-width: 375px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,4 +34,18 @@
 }
 .horizontal-menu-list li:nth-last-child(1) {
   margin-right: auto;
+}
+
+.horizontal-menu-list__cart-items {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #0a96ed;
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+  border-radius: 50px;
+  transform: translate(30px, -45px);
 }

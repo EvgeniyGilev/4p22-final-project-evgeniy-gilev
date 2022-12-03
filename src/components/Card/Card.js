@@ -1,9 +1,14 @@
 import './Card.css';
 import Button from '../Common/Button/Button';
-import Counter from '../Counter/Counter';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToBasket, removeFromBasket } from '../../Store/Slices/BasketSlice';
+import Counter from '../Common/Counter/Counter';
 
 function Card(props) {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.basket);
+
   return (
     <div className="Card">
       <Link to={`products/${props.id}`}>
@@ -21,11 +26,17 @@ function Card(props) {
         )}
         {' руб.'}
       </div>
-      <Counter></Counter>
       <div className="Card-button-container">
-        <Button diabled="false" type="AddCardButton">
-          Добавить
-        </Button>
+        {!products[props.id] && (
+          <Button
+            diabled="false"
+            type="AddCardButton"
+            onClick={() => dispatch(addToBasket(props.id))}
+          >
+            Добавить
+          </Button>
+        )}
+        {products[props.id] && <Counter productid={props.id}></Counter>}
       </div>
     </div>
   );
