@@ -17,7 +17,6 @@ export default function IndexPage() {
   const dispatch = useDispatch();
 
   // Фильтрация
-  const [searchInput, setSearchInput] = useState('');
   const [foundProducts, setFoundProducts] = useState([]);
 
   // Фильтр по категириям
@@ -51,12 +50,14 @@ export default function IndexPage() {
     });
   }, []);
 
-  // Обработчик события при нажатии кнопки Поиск
-  const onSearch = () => {
+  // Обработчик события при изменении Inputа блока поиска
+  const onSearchInput = (event) => {
     setPage(0);
     setFoundProducts(
       products.filter((product) =>
-        product.title.toLowerCase().includes(searchInput.toLowerCase().trim())
+        product.title
+          .toLowerCase()
+          .includes(event.target.value.toLowerCase().trim())
       )
     );
   };
@@ -90,28 +91,18 @@ export default function IndexPage() {
     <div className="index-page">
       <main className="index-page__main">
         <div className="search-block">
+          <IconSearch />
           <input
             type="text"
-            value={searchInput}
             onChange={(event) => {
-              setSearchInput(event.target.value);
+              onSearchInput(event);
             }}
             onKeyDown={(event) => {
               if (event.key === 'Enter') {
-                searchButtonRef.current.click();
+                onSearchInput(event);
               }
             }}
           />
-          <div className="search-block__button">
-            <IconSearch />
-            <Button
-              type="SearchButton"
-              onClick={onSearch}
-              ref={searchButtonRef}
-            >
-              Поиск
-            </Button>
-          </div>
           <div className="search-select">
             <IconFilter />
             <select

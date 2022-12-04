@@ -339,6 +339,32 @@ input:-webkit-autofill {
   margin-top: calc(40 / 1440 * 100vw);
 }
 
+.form-container__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: calc(180 / 1440 * 100vw);
+  height: calc(50 / 1440 * 100vw);
+
+  margin-top: calc(80 / 1440 * 100vw);
+  margin-left: calc(70 / 1440 * 100vw);
+
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(20 / 1440 * 100vw);
+  line-height: calc(16 / 1440 * 100vw);
+
+  color: black;
+
+  background: #0a96ed;
+}
+
 @media screen and (max-width: 768px) {
   .form-container {
     width: calc(600 / 768 * 100vw);

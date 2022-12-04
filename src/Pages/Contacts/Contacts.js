@@ -30,6 +30,7 @@ export default function ContactsPage() {
   };
 
   const ValidateForm = (event) => {
+    refCommonError.current.textContent = '';
     event.preventDefault();
     let check = true;
     if (validateEmailRegExp(refEmailInput.current.value)) {

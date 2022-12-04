@@ -14,6 +14,7 @@
 
 .index-page__container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: calc(10 / 1440 * 100vw);
   margin: calc(10 / 1440 * 100vw);
@@ -26,6 +27,7 @@
 /* стили для кнопки поиска */
 
 .search-block {
+  position: relative;
   margin: calc(10 / 1440 * 100vw);
   display: flex;
   justify-content: center;
@@ -39,6 +41,15 @@
   border-bottom: 3px solid lightskyblue;
   border-radius: 10px 0 0 10px;
 }
+
+.icon-search {
+  position: absolute;
+  width: calc(24 / 1440 * 100vw);
+  height: calc(24 / 1440 * 100vw);
+
+  transform: translate(350%, 80%);
+}
+
 .search-block__button {
   display: flex;
 
@@ -50,11 +61,6 @@
   justify-content: center;
   height: calc(60 / 1440 * 100vw);
   width: calc(250 / 1440 * 100vw);
-}
-
-.icon-search {
-  position: absolute;
-  margin-left: calc(-200 / 1440 * 100vw);
 }
 
 .icon-filter {
@@ -119,40 +125,34 @@
 
   .index-page__container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: calc(10 / 768 * 100vw);
     margin: calc(10 / 768 * 100vw);
   }
 
   .search-block {
+    position: relative;
     margin: calc(10 / 768 * 100vw);
     display: flex;
     justify-content: center;
     flex-direction: row;
     background-color: #e3f4fe;
   }
+
   .search-block input {
     width: calc(300 / 768 * 100vw);
     height: calc(40 / 768 * 100vw);
     border-radius: 0;
     border: 3px solid lightskyblue;
   }
-  .search-block__button {
-    display: flex;
-    position: relative;
-    border: 3px solid lightskyblue;
-    align-items: center;
-    justify-content: center;
-    height: calc(40 / 768 * 100vw);
-    width: calc(150 / 768 * 100vw);
-  }
 
   .icon-search {
     position: absolute;
-
     width: calc(24 / 768 * 100vw);
     height: calc(24 / 768 * 100vw);
-    transform: translate(-25%, 0);
+
+    transform: translate(0, 25%);
   }
 
   .icon-filter {
