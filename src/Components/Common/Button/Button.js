@@ -13,7 +13,7 @@ const Button = forwardRef((props, ref) => {
   } = props;
 
   const onInnerClick = (event) => {
-    console.log('button clicked', event);
+    //console.log('button clicked', event);
     onClick(event);
   };
 

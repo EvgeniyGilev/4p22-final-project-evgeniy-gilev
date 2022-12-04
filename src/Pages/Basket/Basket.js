@@ -1,40 +1,40 @@
-import { useDispatch, useSelector } from 'react-redux';
-import Card from '../../Components/Card/Card';
+import { useSelector } from 'react-redux';
+import ItemCart from './ItemCart/ItemCart';
+import './Basket.css';
+import Button from '../../Components/Common/Button/Button';
 
 export default function BasketPage() {
-  const dispatch = useDispatch;
   const products = useSelector((state) => state.basket);
   const allDataCart = useSelector((state) => state.cart);
   const allproducts = allDataCart.products;
-  /*
-  const decrementCart = () => {
-    dispatch(removeFromBasket(id));
-  };
-
-  const incrementCart = () => {
-    dispatch(addToBasket(id));
-  };
-*/
 
   let viewproducts = allproducts.filter((x) =>
     Object.keys(products).includes(String(x.id))
   );
 
-  console.log(Object.keys(products));
-  console.log(viewproducts);
-
-  //const addedProduct = state.products.find((product) => product.id === payload);
-  //state.cartProducts.push(addedProduct);
+  const ShowOrder = () => {
+    console.log('Ваш заказ: ');
+    for (let val of viewproducts) {
+      console.log(
+        `ID:${val.id}, Наименование: ${val.title}, Цена: ${
+          val.price
+        }, Кол-во: ${products[val.id]}, Общая сумма: ${
+          val.price * products[val.id]
+        }`
+      );
+    }
+    console.log('Итого: ' + allDataCart.basketTotal);
+  };
 
   return (
-    <>
-      <h1>Корзина</h1>
+    <div className="cart-container-main">
+      <h1>Ваши покупки:</h1>
       <div className="cart">
         <div className="cart-item-block"></div>
         {viewproducts.length !== 0 ? (
           viewproducts.map((item, index) => {
             return (
-              <Card
+              <ItemCart
                 key={index}
                 title={item.title}
                 description={item.description}
@@ -49,6 +49,25 @@ export default function BasketPage() {
         )}
         <div className="cart-manage-block"></div>
       </div>
-    </>
+      <div className="basket-total-container">
+        <div>
+          <h1>Итого: </h1>
+        </div>
+        <div className="basket-total-itogo">
+          {Intl.NumberFormat('ru-RU', {
+            minimumFractionDigits: 2,
+          }).format(allDataCart.basketTotal) + ' Руб.'}
+        </div>
+        <div>
+          <Button
+            diabled="false"
+            className="basket-total-itogo__button"
+            onClick={ShowOrder}
+          >
+            Оформить заказ
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -10,78 +10,17 @@ body {
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 50px white inset !important;
   box-shadow: 0 0 0 50px white inset !important;
-  -webkit-text-fill-color: #787878 !important; /* цвет текста */
+  -webkit-text-fill-color: black !important; /* цвет текста */
   background-color: white !important;
-  color: #787878 !important;
+  color: black !important;
 }
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 50px white inset !important;
   box-shadow: 0 0 0 50px white inset !important;
-  -webkit-text-fill-color: #787878 !important; /* цвет текста */
+  -webkit-text-fill-color: black !important; /* цвет текста */
   background-color: white !important;
-  color: #787878 !important;
-}
-
-.page-login {
-  background-color: #ffffff;
-}
-
-.header-container {
-  top: calc(80 / 1440 * 100vw);
-  width: 100vw;
-  height: calc(80 / 1440 * 100vw);
-  display: flex;
-  background: #ffffff;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.header-container__img-logo {
-  width: calc(222 / 1440 * 100vw);
-  height: calc(50 / 1440 * 100vw);
-
-  margin-left: calc(30 / 1440 * 100vw);
-  margin-top: calc(18 / 1440 * 100vw);
-  margin-bottom: calc(12 / 1440 * 100vw);
-}
-
-.header-container__text-course-name {
-  margin-left: calc(30 / 1440 * 100vw);
-  margin-top: calc(21 / 1440 * 100vw);
-  margin-bottom: calc(15 / 1440 * 100vw);
-
-  color: #787878;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: calc(36 / 1440 * 100vw);
-  line-height: calc(44 / 1440 * 100vw);
-}
-.header-container__nav-bar {
-  display: flex;
-  margin-left: calc(628 / 1440 * 100vw);
-
-  color: #787878;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: calc(24 / 1440 * 100vw);
-  line-height: calc(29 / 1440 * 100vw);
-}
-.header-container__registration {
-  margin-top: calc(25 / 1440 * 100vw);
-
-  color: #1a226b;
-}
-
-.header-container__entry {
-  margin-top: calc(25 / 1440 * 100vw);
-  margin-left: calc(28 / 1440 * 100vw);
-}
-
-.main {
-  width: 100%;
-  height: calc(1184 / 1440 * 100vw);
+  color: black !important;
 }
 
 .form-container {
@@ -109,63 +48,13 @@ input:-webkit-autofill {
   justify-content: center;
 
   font-family: 'Roboto', sans-serif;
-  color: #787878;
+  color: black;
   font-style: normal;
   font-weight: 700;
   font-size: calc(50 / 1440 * 100vw);
   line-height: calc(50 / 1440 * 100vw);
 }
 
-.email-form {
-  position: relative;
-  width: calc(510 / 1440 * 100vw);
-  height: calc(68 / 1440 * 100vw);
-  margin-left: calc(45 / 1440 * 100vw);
-  margin-top: calc(15 / 1440 * 100vw);
-}
-
-.email-form__email-label,
-.password-form__password-label,
-.textarea-container__label {
-  display: block;
-  margin-bottom: calc(5 / 1440 * 100vw);
-
-  font-family: 'Roboto', sans-serif;
-  color: #787878;
-  font-style: normal;
-  font-weight: 700;
-  font-size: calc(16 / 1440 * 100vw);
-  line-height: calc(16 / 1440 * 100vw);
-}
-
-.email-form__email-label:before,
-.password-form__password-label::before {
-  content: '* ';
-  margin-left: calc(-10 / 1440 * 100vw);
-}
-
-.email-form__email-input {
-  box-sizing: border-box;
-
-  width: calc(509 / 1440 * 100vw);
-  height: calc(49 / 1440 * 100vw);
-
-  outline: none;
-  background: #ffffff;
-  border: 3px solid lightskyblue;
-  border-radius: 10px;
-
-  font-family: 'Roboto', sans-serif;
-  color: #787878;
-  font-style: normal;
-  font-weight: 700;
-  font-size: calc(28 / 1440 * 100vw);
-  line-height: calc(36 / 1440 * 100vw);
-
-  padding-left: calc(13 / 1440 * 100vw);
-}
-
-/* Валидация начало */
 .validation-error {
   position: absolute;
   top: 0;
@@ -185,9 +74,58 @@ input:-webkit-autofill {
 .email-form__email-input:invalid {
   border-color: #ee2424;
 }
-/* Валидация конец */
+.email-form {
+  position: relative;
+  width: calc(510 / 1440 * 100vw);
+  height: calc(68 / 1440 * 100vw);
+  margin-left: calc(45 / 1440 * 100vw);
+  margin-top: calc(15 / 1440 * 100vw);
+}
 
-.password-form {
+.email-form__email-label,
+.name-form__label,
+.textarea-container__label {
+  display: block;
+  margin-bottom: calc(5 / 1440 * 100vw);
+
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(16 / 1440 * 100vw);
+  line-height: calc(16 / 1440 * 100vw);
+}
+
+.email-form__email-label:before,
+.name-form__label::before,
+.radio-container__gender-text::before,
+.textarea-container__label::before {
+  content: '* ';
+  margin-left: calc(-10 / 1440 * 100vw);
+}
+
+.email-form__email-input {
+  box-sizing: border-box;
+
+  width: calc(509 / 1440 * 100vw);
+  height: calc(49 / 1440 * 100vw);
+
+  outline: none;
+  background: #ffffff;
+  border: 3px solid lightskyblue;
+  border-radius: 10px;
+
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(28 / 1440 * 100vw);
+  line-height: calc(36 / 1440 * 100vw);
+
+  padding-left: calc(13 / 1440 * 100vw);
+}
+
+.name-form {
   position: relative;
   box-sizing: border-box;
   width: calc(510 / 1440 * 100vw);
@@ -196,12 +134,12 @@ input:-webkit-autofill {
   margin-top: calc(13 / 1440 * 100vw);
 }
 
-.password-form__password-input {
+.name-form__input {
   width: calc(509 / 1440 * 100vw);
   height: calc(49 / 1440 * 100vw);
 
   font-family: 'Roboto', sans-serif;
-  color: #787878;
+  color: black;
   font-style: normal;
   font-weight: 700;
   font-size: calc(28 / 1440 * 100vw);
@@ -213,14 +151,6 @@ input:-webkit-autofill {
   background: #ffffff;
   border: 3px solid lightskyblue;
   border-radius: 10px;
-}
-.password-form-confirm {
-  position: relative;
-  box-sizing: border-box;
-  width: calc(510 / 1440 * 100vw);
-  height: calc(70 / 1440 * 100vw);
-  margin-left: calc(45 / 1440 * 100vw);
-  margin-top: calc(11 / 1440 * 100vw);
 }
 
 .radio-container,
@@ -235,7 +165,7 @@ input:-webkit-autofill {
   margin-left: calc(-2 / 1440 * 100vw);
 
   font-family: 'Roboto', sans-serif;
-  color: #787878;
+  color: black;
   font-style: normal;
   font-weight: 700;
   font-size: calc(16 / 1440 * 100vw);
@@ -268,7 +198,7 @@ input:-webkit-autofill {
   font-size: calc(14 / 1440 * 100vw);
   line-height: calc(16 / 1440 * 100vw);
 
-  color: #787878;
+  color: black;
 }
 
 .radio-container__label::before {
@@ -312,7 +242,7 @@ input:-webkit-autofill {
   padding-top: calc(5 / 1440 * 100vw);
 
   font-family: 'Roboto', sans-serif;
-  color: #787878;
+  color: black;
   font-style: normal;
   font-weight: 700;
   font-size: calc(28 / 1440 * 100vw);
@@ -356,7 +286,7 @@ input:-webkit-autofill {
   font-size: calc(14 / 1440 * 100vw);
   line-height: calc(16 / 1440 * 100vw);
 
-  color: #787878;
+  color: black;
 }
 
 .checkbox-form__input {
@@ -369,7 +299,7 @@ input:-webkit-autofill {
 
 .textarea-container__textarea::placeholder,
 .email-form__email-input::placeholder,
-.password-form__password-input::placeholder {
+.name-form__input::placeholder {
   color: #cccccc;
 }
 
@@ -379,10 +309,10 @@ input:-webkit-autofill {
   justify-content: center;
 
   width: calc(180 / 1440 * 100vw);
-  height: calc(52 / 1440 * 100vw);
+  height: calc(50 / 1440 * 100vw);
 
   margin-top: calc(80 / 1440 * 100vw);
-  margin-left: calc(210 / 1440 * 100vw);
+  margin-left: calc(70 / 1440 * 100vw);
 
   border: none;
 
@@ -397,62 +327,19 @@ input:-webkit-autofill {
   background: #1a226b;
 }
 
+.buttons-block {
+  display: flex;
+  flex-direction: row;
+  gap: calc(10 / 1440 * 100vw);
+}
+
+.common-error__label {
+  color: red;
+  text-align: center;
+  margin-top: calc(40 / 1440 * 100vw);
+}
+
 @media screen and (max-width: 768px) {
-  .header-container {
-    width: 100vw;
-    height: calc(80 / 768 * 100vw);
-    display: flex;
-    background: #ffffff;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  }
-
-  .header-container__img-logo {
-    width: calc(124 / 768 * 100vw);
-    height: calc(25 / 768 * 100vw);
-
-    margin-left: calc(20 / 768 * 100vw);
-    margin-top: calc(25 / 768 * 100vw);
-    margin-bottom: calc(30 / 768 * 100vw);
-  }
-
-  .header-container__text-course-name {
-    margin-left: calc(34 / 768 * 100vw);
-    margin-top: calc(23 / 768 * 100vw);
-    margin-bottom: calc(28 / 768 * 100vw);
-
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: calc(24 / 768 * 100vw);
-    line-height: calc(29 / 768 * 100vw);
-  }
-
-  .header-container__nav-bar {
-    display: flex;
-    margin-left: calc(219 / 768 * 100vw);
-
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-
-    font-size: calc(16 / 768 * 100vw);
-    line-height: calc(19 / 768 * 100vw);
-  }
-  .header-container__registration {
-    margin-top: calc(30 / 768 * 100vw);
-    color: #1a226b;
-  }
-
-  .header-container__entry {
-    margin-top: calc(30 / 768 * 100vw);
-    margin-left: calc(36 / 768 * 100vw);
-  }
-
-  .main {
-    width: 100%;
-    height: calc(1184 / 768 * 100vw);
-  }
-
   .form-container {
     width: calc(600 / 768 * 100vw);
     height: calc(875 / 768 * 100vw);
@@ -478,62 +365,13 @@ input:-webkit-autofill {
     margin-top: calc(26 / 768 * 100vw);
 
     font-family: 'Roboto', sans-serif;
-    color: #787878;
+    color: black;
     font-style: normal;
     font-weight: 700;
     font-size: calc(50 / 768 * 100vw);
     line-height: calc(50 / 768 * 100vw);
   }
 
-  .email-form {
-    position: relative;
-    width: calc(510 / 768 * 100vw);
-    height: calc(68 / 768 * 100vw);
-    margin-left: calc(45 / 768 * 100vw);
-    margin-top: calc(15 / 768 * 100vw);
-  }
-
-  .email-form__email-label,
-  .password-form__password-label,
-  .textarea-container__label {
-    display: block;
-    margin-bottom: calc(5 / 768 * 100vw);
-
-    font-family: 'Roboto', sans-serif;
-    color: #787878;
-    font-style: normal;
-    font-weight: 700;
-    font-size: calc(16 / 768 * 100vw);
-    line-height: calc(16 / 768 * 100vw);
-  }
-
-  .email-form__email-label:before,
-  .password-form__password-label::before {
-    content: '* ';
-    margin-left: calc(-10 / 768 * 100vw);
-  }
-
-  .email-form__email-input {
-    box-sizing: border-box;
-
-    width: calc(509 / 768 * 100vw);
-    height: calc(49 / 768 * 100vw);
-
-    outline: none;
-    background: #ffffff;
-    border: 2px solid #787878;
-
-    font-family: 'Roboto', sans-serif;
-    color: #787878;
-    font-style: normal;
-    font-weight: 700;
-    font-size: calc(28 / 768 * 100vw);
-    line-height: calc(36 / 768 * 100vw);
-
-    padding-left: calc(13 / 768 * 100vw);
-  }
-
-  /* Валидация начало */
   .validation-error {
     position: absolute;
     top: 0;
@@ -554,9 +392,55 @@ input:-webkit-autofill {
     border-color: #ee2424;
   }
 
-  /* Валидация конец */
+  .email-form {
+    position: relative;
+    width: calc(510 / 768 * 100vw);
+    height: calc(68 / 768 * 100vw);
+    margin-left: calc(45 / 768 * 100vw);
+    margin-top: calc(15 / 768 * 100vw);
+  }
 
-  .password-form {
+  .email-form__email-label,
+  .name-form__label,
+  .textarea-container__label {
+    display: block;
+    margin-bottom: calc(5 / 768 * 100vw);
+
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-style: normal;
+    font-weight: 700;
+    font-size: calc(16 / 768 * 100vw);
+    line-height: calc(16 / 768 * 100vw);
+  }
+
+  .email-form__email-label:before,
+  .name-form__label::before {
+    content: '* ';
+    margin-left: calc(-10 / 768 * 100vw);
+  }
+
+  .email-form__email-input {
+    box-sizing: border-box;
+
+    width: calc(509 / 768 * 100vw);
+    height: calc(49 / 768 * 100vw);
+
+    outline: none;
+    background: #ffffff;
+    border: 2px solid lightskyblue;
+
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-style: normal;
+    font-weight: 700;
+    font-size: calc(28 / 768 * 100vw);
+    line-height: calc(36 / 768 * 100vw);
+
+    padding-left: calc(13 / 768 * 100vw);
+  }
+
+  .name-form {
     position: relative;
     box-sizing: border-box;
     width: calc(510 / 768 * 100vw);
@@ -565,12 +449,12 @@ input:-webkit-autofill {
     margin-top: calc(13 / 768 * 100vw);
   }
 
-  .password-form__password-input {
+  .name-form__input {
     width: calc(509 / 768 * 100vw);
     height: calc(49 / 768 * 100vw);
 
     font-family: 'Roboto', sans-serif;
-    color: #787878;
+    color: black;
     font-style: normal;
     font-weight: 700;
     font-size: calc(28 / 768 * 100vw);
@@ -580,15 +464,7 @@ input:-webkit-autofill {
 
     outline: none;
     background: #ffffff;
-    border: 2px solid #787878;
-  }
-  .password-form-confirm {
-    position: relative;
-    box-sizing: border-box;
-    width: calc(510 / 768 * 100vw);
-    height: calc(70 / 768 * 100vw);
-    margin-left: calc(45 / 768 * 100vw);
-    margin-top: calc(11 / 768 * 100vw);
+    border: 2px solid lightskyblue;
   }
 
   .radio-container,
@@ -603,7 +479,7 @@ input:-webkit-autofill {
     margin-left: calc(-2 / 768 * 100vw);
 
     font-family: 'Roboto', sans-serif;
-    color: #787878;
+    color: black;
     font-style: normal;
     font-weight: 700;
     font-size: calc(16 / 768 * 100vw);
@@ -626,7 +502,7 @@ input:-webkit-autofill {
     font-weight: 400;
     font-size: calc(14 / 768 * 100vw);
     line-height: calc(16 / 768 * 100vw);
-    color: #787878;
+    color: black;
   }
 
   .radio-container__button-container {
@@ -655,7 +531,7 @@ input:-webkit-autofill {
     width: calc(12 / 768 * 100vw);
     height: calc(12 / 768 * 100vw);
     padding: calc(2 / 768 * 100vw);
-    border: 2px solid #787878;
+    border: 2px solid lightskyblue;
     border-radius: 50%;
     background-clip: content-box;
   }
@@ -673,13 +549,13 @@ input:-webkit-autofill {
     padding-top: calc(5 / 768 * 100vw);
 
     font-family: 'Roboto', sans-serif;
-    color: #787878;
+    color: black;
     font-style: normal;
     font-weight: 700;
     font-size: calc(28 / 768 * 100vw);
     line-height: calc(36 / 768 * 100vw);
 
-    border: 2px solid #787878;
+    border: 2px solid lightskyblue;
   }
 
   .checkbox-form {
@@ -701,7 +577,7 @@ input:-webkit-autofill {
     width: calc(24 / 768 * 100vw);
     height: calc(24 / 768 * 100vw);
     padding: calc(4 / 768 * 100vw);
-    border: 2px solid #787878;
+    border: 2px solid lightskyblue;
     background-clip: content-box;
   }
 
@@ -715,7 +591,7 @@ input:-webkit-autofill {
     font-size: calc(14 / 768 * 100vw);
     line-height: calc(16 / 768 * 100vw);
 
-    color: #787878;
+    color: black;
   }
 
   .checkbox-form__input {
@@ -728,7 +604,7 @@ input:-webkit-autofill {
 
   .textarea-container__textarea::placeholder,
   .email-form__email-input::placeholder,
-  .password-form__password-input::placeholder {
+  .name-form__input::placeholder {
     color: #cccccc;
   }
 
@@ -738,21 +614,23 @@ input:-webkit-autofill {
     justify-content: center;
 
     width: calc(180 / 768 * 100vw);
-    height: calc(52 / 768 * 100vw);
+    height: calc(50 / 768 * 100vw);
 
     margin-top: calc(80 / 768 * 100vw);
-    margin-left: calc(210 / 768 * 100vw);
+    margin-left: calc(70 / 768 * 100vw);
 
     border: none;
+    border-radius: 15px;
+    text-align: center;
 
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: calc(24 / 768 * 100vw);
+    font-size: calc(20 / 768 * 100vw);
     line-height: calc(16 / 768 * 100vw);
 
-    color: #ffffff;
+    color: black;
 
-    background: #1a226b;
+    background: #0a96ed;
   }
 }

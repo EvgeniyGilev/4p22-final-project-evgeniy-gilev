@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   products: [],
   isLoading: false,
-  cartProducts: {},
+  basketTotal: 0,
 };
 
 export const cartSlice = createSlice({
@@ -16,21 +16,16 @@ export const cartSlice = createSlice({
     setIsLoading: (state, { payload }) => {
       state.isLoading = payload;
     },
-    addProductToCart: (state, { payload }) => {
-      // передаем в payload id продукта, по которому ищем товар в общем списке, и его добавляем в корзину
-      const addedProduct = state.products.find(
-        (product) => product.id === payload
-      );
-      state.cartProducts.push(addedProduct);
+    addBasketTotal: (state, { payload }) => {
+      state.basketTotal = Math.round((state.basketTotal + payload) * 100) / 100;
     },
-    removeProductFromCart: (state, { payload }) => {
-      state.cartProducts = state.cartProducts.filter(
-        (product) => product.id !== payload
-      );
+    removeBasketTotal: (state, { payload }) => {
+      state.basketTotal = Math.round((state.basketTotal - payload) * 100) / 100;
     },
   },
 });
 
-export const { setProducts, setIsLoading } = cartSlice.actions;
+export const { setProducts, setIsLoading, addBasketTotal, removeBasketTotal } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -1,15 +1,14 @@
-/* стили для кнопки */
 .CommonButton {
   display: inline-block;
   outline: none;
   border: none;
   background: black;
-  padding: 5px 5px;
+  padding: calc(5 / 1440 * 100vw) calc(5 / 1440 * 100vw);
   color: white;
   border-radius: 0;
   transition: 0.5s background-color;
-  height: 25px;
-  width: 100px;
+  height: calc(25 / 1440 * 100vw);
+  width: calc(100 / 1440 * 100vw);
 }
 
 .CommonButton:hover {
@@ -17,29 +16,21 @@
   color: black;
 }
 
-/* реализация светлой и темной темы через стили */
-.CommonButton--light {
-  background: white;
-  border: 1px solid black;
-  color: black;
-  transition: 0.5s background-color;
-}
-
-.CommonButton--light:hover {
-  background-color: black;
-  color: black;
-}
-
-.CommonButton--light.CommonButton--disabled {
-  border-color: grey;
-  color: grey;
-}
-
-.CommonButton--dark.CommonButton--disabled {
-  border-color: grey;
-  color: grey;
-}
-
 .CommonButton--disabled {
   pointer-events: none;
+}
+
+@media screen and (min-width: 100px) and (max-width: 768px) {
+  .CommonButton {
+    display: inline-block;
+    outline: none;
+    border: none;
+    background: black;
+    padding: calc(5 / 768 * 100vw) calc(5 / 768 * 100vw);
+    color: white;
+    border-radius: 0;
+    transition: 0.5s background-color;
+    height: calc(25 / 768 * 100vw);
+    width: calc(100 / 768 * 100vw);
+  }
 }

@@ -2,19 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  width: 250px;
+  height: calc(40 / 1440 * 100vw);
+  width: calc(250 / 1440 * 100vw);
 }
 
 .counter-button {
   border-radius: 38px;
   background: lightskyblue;
-  font-size: 20px;
+  font-size: calc(20 / 1440 * 100vw);
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: calc(40 / 1440 * 100vw);
 }
 
 .counter-button:hover {
@@ -23,6 +23,38 @@
 }
 
 .counter-value {
-  width: 50px;
-  font-size: 20px;
+  width: calc(50 / 1440 * 100vw);
+  font-size: calc(20 / 1440 * 100vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 100px) and (max-width: 768px) {
+  .counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(40 / 768 * 100vw);
+    width: calc(250 / 768 * 100vw);
+  }
+
+  .counter-button {
+    border-radius: 38px;
+    background: lightskyblue;
+    font-size: calc(20 / 768 * 100vw);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(40 / 768 * 100vw);
+  }
+
+  .counter-value {
+    width: calc(50 / 768 * 100vw);
+    font-size: calc(20 / 768 * 100vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

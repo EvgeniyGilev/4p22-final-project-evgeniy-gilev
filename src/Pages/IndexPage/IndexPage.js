@@ -30,7 +30,7 @@ export default function IndexPage() {
 
   // Пагинация
   const [page, setPage] = useState(0);
-  const [pageSize, setPageSize] = useState(8);
+  const pageSize = 8;
   const [pageCount, setPageCount] = useState(0);
 
   const searchButtonRef = createRef();
@@ -44,7 +44,6 @@ export default function IndexPage() {
       setTotalProducts(getPageProducts(result, 0, 8));
 
       setCategories([
-        '',
         ...Array.from(new Set(result.map((item) => item.category))),
       ]);
 

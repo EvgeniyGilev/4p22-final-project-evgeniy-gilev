@@ -3,7 +3,6 @@ import { createSlice } from '@reduxjs/toolkit';
 export const basketSlice = createSlice({
   name: 'basket',
   initialState: {},
-  basketProducts: [],
   reducers: {
     addToBasket(state, { payload }) {
       if (state[payload]) {
@@ -17,13 +16,9 @@ export const basketSlice = createSlice({
 
       if (state[payload] === 0) delete state[payload];
     },
-    clearBasket() {
-      return {};
-    },
   },
 });
 
-export const { addToBasket, removeFromBasket, clearBasket } =
-  basketSlice.actions;
+export const { addToBasket, removeFromBasket } = basketSlice.actions;
 
 export default basketSlice.reducer;
