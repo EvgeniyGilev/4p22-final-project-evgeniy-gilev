@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/4p22-final-project-evgeniy-gilev/static/css/main.16f01680.css",
-    "main.js": "/4p22-final-project-evgeniy-gilev/static/js/main.9ce3d492.js",
+    "main.css": "/4p22-final-project-evgeniy-gilev/static/css/main.bba7105e.css",
+    "main.js": "/4p22-final-project-evgeniy-gilev/static/js/main.b80b403a.js",
     "static/media/cart.svg": "/4p22-final-project-evgeniy-gilev/static/media/cart.13d5afd6b72658a31365afd2431511ba.svg",
     "static/media/search.svg": "/4p22-final-project-evgeniy-gilev/static/media/search.53ae7ef63f4121f6d9bac1adbbb4bd79.svg",
     "static/media/filter.svg": "/4p22-final-project-evgeniy-gilev/static/media/filter.dff5110e1b78e9780a78e70306268697.svg",
     "index.html": "/4p22-final-project-evgeniy-gilev/index.html",
-    "main.16f01680.css.map": "/4p22-final-project-evgeniy-gilev/static/css/main.16f01680.css.map",
-    "main.9ce3d492.js.map": "/4p22-final-project-evgeniy-gilev/static/js/main.9ce3d492.js.map"
+    "main.bba7105e.css.map": "/4p22-final-project-evgeniy-gilev/static/css/main.bba7105e.css.map",
+    "main.b80b403a.js.map": "/4p22-final-project-evgeniy-gilev/static/js/main.b80b403a.js.map"
   },
   "entrypoints": [
-    "static/css/main.16f01680.css",
-    "static/js/main.9ce3d492.js"
+    "static/css/main.bba7105e.css",
+    "static/js/main.b80b403a.js"
   ]
 }
